@@ -1,0 +1,2 @@
+The videos/ part tells GitHub to create a folder named videos.
+placeholder.txt is just a temporary file we’ll delete later.
