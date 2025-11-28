@@ -16,7 +16,7 @@ Planned additions:
 - Task 3 – Sparse reward Atari (Breakout)
 - Task 4 – New MuJoCo continuous environment
 - 
-## Task 3 – Atari Breakout with DQN
+## Task 3 – Atari Breakout with DQN 
 
 **Environment:** Atari Breakout (`ALE/Breakout-v5`)   
 **Algorithm:** Deep Q-Network (DQN) with convolutional policy and frame stacking.
