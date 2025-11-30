@@ -44,3 +44,8 @@ Planned additions:
 - Last training episode video: `Task3_Breakout_DQN_LastEpisode.mp4`
 - Raw evaluation episode 15 video: `Task3_Breakout_DQN_ep15-step-0-to-step-1000.mp4`
 - All evaluation videos zipped: `videos_task3_breakout.zip`
+
+** Task 4 **
+For Task 4 (MuJoCo Hopper PPO), the final agent achieved a mean reward of 3480.30 ± 5.30 over 10 evaluation episodes, using the trained model model_Hopper_PPO.zip. Training curves (episode length, episode reward, fps, and losses) are logged in Hopper_tensorboard/ and provided as Hopper_tensorboard.zip. Due to an OpenGL context error (gladLoadGL) on Colab’s headless GPU backend, I was unable to record Hopper videos with VecVideoRecorder; therefore only numerical evaluation and TensorBoard logs are included for this task.
+
+
