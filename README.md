@@ -45,7 +45,34 @@ Planned additions:
 - Raw evaluation episode 15 video: `Task3_Breakout_DQN_ep15-step-0-to-step-1000.mp4`
 - All evaluation videos zipped: `videos_task3_breakout.zip`
 
-** Task 4 **
-For Task 4 (MuJoCo Hopper PPO), the final agent achieved a mean reward of 3480.30 ± 5.30 over 10 evaluation episodes, using the trained model model_Hopper_PPO.zip. Training curves (episode length, episode reward, fps, and losses) are logged in Hopper_tensorboard/ and provided as Hopper_tensorboard.zip. Due to an OpenGL context error (gladLoadGL) on Colab’s headless GPU backend, I was unable to record Hopper videos with VecVideoRecorder; therefore only numerical evaluation and TensorBoard logs are included for this task.
+## Task 4 – MuJoCo Hopper with PPO (Continuous Control)
+
+**Environment:** `Hopper-v4` (MuJoCo continuous-control benchmark).  
+**Algorithm:** Proximal Policy Optimization (PPO) with `MlpPolicy` (Stable-Baselines3).
+
+**Training setup**
+- Total training steps: **1,000,000**
+- Vectorized environments: **4**
+- Discount factor (γ): **0.99**
+- Learning rate: **3e-4** (linear schedule)
+- Rollout length: **2,048**, batch size: **64**, PPO epochs: **10**
+- GAE(λ = 0.95) and advantage normalization enabled
+
+**Training performance**
+- Final training mean episode reward (`rollout/ep_rew_mean`): **≈ 2,070**
+- Final mean episode length (`rollout/ep_len_mean`): **≈ 554** steps
+- Value function explained variance: **≈ 0.99** (critic is well-fitted)
+
+**Evaluation**
+- Evaluated the final policy over **10 episodes** (no rendering, headless mode).
+- **Mean evaluation reward:** **3480.30 ± 5.30**.
+
+**Artifacts in this repository**
+- Trained model: `model_Hopper_PPO.zip`
+- TensorBoard logs: folder `Hopper_tensorboard/` (also zipped as `Hopper_tensorboard.zip`)
+
+*Note:* Due to OpenGL limitations on Colab’s headless GPU backend (gladLoadGL error), MuJoCo rendering with `VecVideoRecorder` was not reliable, so Task-4 Hopper rollouts are documented via numerical evaluation and TensorBoard logs rather than videos.
+
+
 
 
